@@ -88,6 +88,17 @@ var ARCarDemo = createReactClass({
             materials={this.state.texture}
             onClick={this._toggleButtons}
             animation={{name:"scaleCar", run:this.state.animateCar,}} />
+            
+            
+            {/* bugatti */}
+            {/* <Viro3DObject
+            scale={[0, 0, 0]}
+            source={require('./res/bugatti/bugatti.obj')}
+            resources={[require('./res/bugatti/bugatti.mtl'),
+                        ]}
+            type="OBJ"
+            animation={{name:"scaleCar", run:this.state.animateCar,}} /> */}
+
 
           <ViroSpotLight
             innerAngle={5}
@@ -219,7 +230,7 @@ ViroMaterials.createMaterials({
 ViroARTrackingTargets.createTargets({
   logo : {
     source : require('./res/logo.png'),
-    orientation : "Up",
+    orientation : "UP",
     physicalWidth : 0.210 // real world width in meters
   }
 });
