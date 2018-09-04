@@ -10,6 +10,7 @@ import {
   ViroNode,
   ViroAnimations,
   Viro3DObject,
+  ViroPolygon,
   ViroLightingEnvironment,
   ViroARImageMarker,
   ViroARTrackingTargets,
@@ -78,28 +79,21 @@ var ARCarDemo = createReactClass({
               animation={{name:"tapAnimation", run:this.state.tapYellow, onFinish:this._animateFinished}}
               shadowCastingBitMask={0}/>
           </ViroNode>
-
           <Viro3DObject
             scale={[0, 0, 0]}
             source={require('./res/tesla/object_car.obj')}
-            resources={[require('./res/tesla/object_car.mtl'),
-                        ]}
+            resources={[require('./res/tesla/object_car.mtl'),]}
             type="OBJ"
             materials={this.state.texture}
             onClick={this._toggleButtons}
             animation={{name:"scaleCar", run:this.state.animateCar,}} />
-            
-            
-            {/* bugatti */}
-            {/* <Viro3DObject
-            scale={[0, 0, 0]}
-            source={require('./res/bugatti/bugatti.obj')}
-            resources={[require('./res/bugatti/bugatti.mtl'),
-                        ]}
-            type="OBJ"
-            animation={{name:"scaleCar", run:this.state.animateCar,}} /> */}
-
-
+          {/* <ViroPolygon 
+            scale={[.5, .5, .5]}
+             rotation={[0, 0, 90]}
+             materials={["grey_sphere"]}
+             position={[-0.3, 0.3, 0]}
+             vertices={[[0,0.5], [0.5,-0.5], [-0.5,0.5]]}
+            /> */}
           <ViroSpotLight
             innerAngle={5}
             outerAngle={25}
